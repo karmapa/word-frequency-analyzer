@@ -3,7 +3,7 @@ const PbInfo = (props : {
   apiHREF: string
 }) => {
 
-  var apiText = ''
+  let apiText = ''
 
   fetch(props.apiHREF).then(function(response) {
     if (response.ok === false) {
@@ -15,18 +15,18 @@ const PbInfo = (props : {
 
     apiText = (jsonObject.text)
 
-    var tokenize = require('tibetan-tokenize')
-    var tokenTokens = (tokenize(apiText)).tokens
-    var tokenOffsets = (tokenize(apiText)).offsets
+    const tokenize = require('tibetan-tokenize')
+    const tokenTokens = (tokenize(apiText)).tokens
+    const tokenOffsets = (tokenize(apiText)).offsets
 
     arrangeResult(tokenTokens, tokenOffsets)
 
   });
 
   const arrangeResult = (tokenTokens, tokenOffsets) => {
-    var pageList = ''
+    let pageList = ''
 
-    for (var i in tokenTokens) {
+    for (let i in tokenTokens) {
       pageList = pageList + '<div class=' + '"' + 'resultBlock' + '">' + tokenTokens[i] + '<hr>' + tokenOffsets[i] + '</div>'
 
     }
