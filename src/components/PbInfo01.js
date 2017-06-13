@@ -7,12 +7,11 @@ const PbInfo = (props : {
 }) => {
 
   let apiText = ''
-  //let theResult=this.refs.theResult;
 
   fetch(props.apiHREF).then(function(response) {
     if (response.ok === false) {
-  //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
-
+    //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
+    //this.refs.showResult.innerHTML='CCC'
     }
 
     return response.json();
@@ -23,30 +22,10 @@ const PbInfo = (props : {
 
     const tokenTokens = (tokenize(apiText)).tokens
     const tokenOffsets = (tokenize(apiText)).offsets
-    separate(tokenTokens)
+
     arrangeResult(tokenTokens, tokenOffsets)
 
   });
-
-  const separate=(tokenTokens)=>{
-
-    let singleWord = []
-    let caculateTimes = []
-
-    for (let i in tokenTokens) {
-
-    }
-    if (pageList==='') {
-  //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
-    this.ref.theResult.innerHTML="AAA"
-    }else{
-  //  document.getElementById('showResult').innerHTML = pageList
-    this.ref.theResult.innerHTML="AAA"
-  }
-
-
-
-  }
 
   const arrangeResult = (tokenTokens, tokenOffsets) => {
     let pageList = ''
@@ -56,21 +35,27 @@ const PbInfo = (props : {
 
     }
     if (pageList==='') {
-  //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
-    this.ref.theResult.innerHTML="AAA"
+    //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
+    //this.refs.showResult.innerHTML='BBB'
     }else{
-  //  document.getElementById('showResult').innerHTML = pageList
-    this.ref.theResult.innerHTML="AAA"
+    //document.getElementById('showResult').innerHTML = pageList
+    //this.refs.showResult.innerHTML='AAA'
+}
+
+
+
   }
 
+console.log(tokenize('\n༼ཀ༽ ༄༅། ༈ །འདུལ་བ་ལུང་བཞུགས་སོ། །\n(黃)  律師戒行經第一部\n'))
 
-
-
-  }
+console.log(tokenize('རྒྱལ་བའི་དབང་པོ་ཆོས་ཀྱི་གྲུ་བརྙེས་འདམ་ལས་བརྒལ།'))
 
 
   return null
 
+
 }
+
+
 
 export default PbInfo;

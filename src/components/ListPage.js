@@ -6,7 +6,8 @@ class ListPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      apiHREF: []
+      apiHREF: [],
+      refName: 'showResult'
     }
   }
 
@@ -22,12 +23,13 @@ class ListPage extends Component {
         KDB名稱：<input id="inputKDBS"/>
         PB ID： <input id="inputPBS"/>
         <button onClick={this.handleSearch}>Search</button>
-        <div id="showResult">
+        <div ref="theResult"></div>
+<div id="showResult">
           {this.state.apiHREF.map((value,) => {
             return <PbInfo apiHREF={value}/>
           })}
-        </div>
 
+      </div>
       </div>
     );
   }
