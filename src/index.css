@@ -19,18 +19,21 @@ input{
   margin-top:20px;
   border-top:5px solid rgb(11, 68, 10);
   padding-top: 30px;
-  color:rgb(108, 87, 39);
+  color:blue;
 }
 
-.resultBlock {
+#showResult div {
   height:100px;
-  width:50px;
+  min-width:50px;
   float:left;
   margin-bottom: 15px;
+  color:rgb(8, 29, 3);
 }
 
-.resultBlock hr{
+#showResult hr {
+  border-color: rgb(206, 221, 202);
 }
+
 
 @media screen and (max-width:620px){
   input,button{
