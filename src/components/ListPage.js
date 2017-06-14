@@ -1,24 +1,25 @@
 import React, {Component} from 'react';
 import tokenize from 'tibetan-tokenize';
+import ResultDisplay from './ResultDisplay';
 
 class ListPage extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      wordResult: [],
       inputKDBS: '',
       inputPB: '',
       finalWord: [],
-      finalFrequency: []
+      finalFrequency: [],
     };
   };
 
   handleSearch = () => {
 
     const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.inputKDBS}/pbs/${this.state.inputPB}`
+    const testHREF='https://api.dharma-treasure.org/kdbs/jiangkangyur/pbs/1-1-3b'
 
-    fetch(newHREF).then(function(response) {
+    fetch(testHREF).then(function(response) {
       if (response.ok === false) {
         console.log('response' + response)
       }
@@ -64,9 +65,15 @@ class ListPage extends Component {
 
         }
       };
-    //  console.log({this.state.inputKDBS})
-      console.log(theResult)
-    });
+return theResult
+    }).then((theResult)=>{
+      this.setState({
+        finalWord: theResult.wordArr,
+        finalFrequency: theResult.frequencyArr,
+      })
+          console.log('TEST'+this.state.finalWord)
+    })
+
 
   }
 
@@ -93,7 +100,7 @@ class ListPage extends Component {
 
         <button onClick={this.handleSearch}>Search</button>
 
-        <div ref="theResult"></div>
+        <ResultDisplay words={this.state.finalWord} times={this.state.finalFrequency}/>
       </div>
     );
   }
