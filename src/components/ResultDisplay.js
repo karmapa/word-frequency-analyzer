@@ -5,57 +5,28 @@ import React, {Component} from 'react'
   const ResultDisplay =(props:{words:[],times:[]})=> {
 
 
-  console.log('HEY-YOU'+props.finalWord)
+//  console.log('Test'+props.words)
 
+let finalResult='';
 
+for (let i in props.words){
 
+finalResult+=`<div class="resultBlock">${props.words[i]}<hr>${props.times[i]}</div>`
 
-/*  const separate=(tokenTokens)=>{
+}
 
-    let singleWord = []
-    let caculateTimes = []
-
-    for (let i in tokenTokens) {
-
-    }
-    if (pageList==='') {
-    document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
-    //this.ref.theResult.innerHTML="AAA"
-    }else{
-    document.getElementById('showResult').innerHTML = pageList
-  //  this.ref.theResult.innerHTML="AAA"
-  }
-
-
-
-  }
-
-  const arrangeResult = (tokenTokens, tokenOffsets) => {
-    let pageList = ''
-
-    for (let i in tokenTokens) {
-      pageList = pageList + '<div class=' + '"' + 'resultBlock' + '">' + tokenTokens[i] + '<hr>' + tokenOffsets[i] + '</div>'
-
-    }
-    if (pageList==='') {
-  //  document.getElementById('showResult').innerHTML = '請輸入正確的名稱以及ID'
-    this.ref.theResult.innerHTML="AAA"
-    }else{
-  //  document.getElementById('showResult').innerHTML = pageList
-    this.ref.theResult.innerHTML="AAA"
-  }
-
-}*/
-
-
+//this.refs.testIt.innerHTML=finalResult
 
   return (
     <div>
 
       <div>HELLO</div>
-      <div>{props.finalWord}</div>
+      <hr/>
+      <div>{finalResult}</div>
     </div>
-  )};
+  )
+
+};
 
 
 export default ResultDisplay;
