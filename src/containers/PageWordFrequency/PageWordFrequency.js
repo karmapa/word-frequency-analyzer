@@ -34,8 +34,6 @@ class PageWordFrequency extends Component {
     .catch((errResponse) => {
       console.error('errResponse', errResponse);
     });
-
-
   }
 
   handleKDBChange = (e) => {
@@ -50,7 +48,6 @@ class PageWordFrequency extends Component {
     return (
       <div className="App">
         <h1>字頻列表</h1>
-
         <lable>
           KDB名稱：<input onChange={this.handleKDBChange}/>
         </lable>
@@ -58,7 +55,6 @@ class PageWordFrequency extends Component {
           PB ID：
           <input onChange={this.handlePBChange}/>
         </label>
-
         <button onClick={this.handleSearch}>Search</button>
 
         <AnalyzedResult words={this.state.finalWord} times={this.state.finalFrequency}/>
