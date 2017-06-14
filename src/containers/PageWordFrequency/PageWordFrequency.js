@@ -27,7 +27,7 @@ class PageWordFrequency extends Component {
 
     }).then(function({text}) {
 
-      const tokenTokens = (tokenize(text)).tokens;
+      const tokenTokens = tokenize(text).tokens;
 
       let theResult = {
         wordArr: [],
