@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ResultDisplay =(props:{words:[],times:[]})=> {
+const AnalyzedResult =(props:{words:[],times:[]})=> {
 
 
 let finalResult=[];
@@ -23,4 +23,4 @@ return finalResult
 };
 
 
-export default ResultDisplay;
+export default AnalyzedResult;

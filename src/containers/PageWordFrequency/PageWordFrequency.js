@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import tokenize from 'tibetan-tokenize';
-import ResultDisplay from './../../components/AnalyzedResult/AnalyzedResult';
+import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 
 class PageWordFrequency extends Component {
 
@@ -97,7 +97,7 @@ return theResult
 
         <button onClick={this.handleSearch}>Search</button>
 
-        <ResultDisplay words={this.state.finalWord} times={this.state.finalFrequency}/>
+        <AnalyzedResult words={this.state.finalWord} times={this.state.finalFrequency}/>
 
       </div>
     );
