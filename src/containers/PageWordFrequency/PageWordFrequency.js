@@ -40,7 +40,7 @@ class PageWordFrequency extends Component {
   render() {
     const {analyzedData} = this.state;
     return (
-      <div className="App">
+      <div id="pageWordFrequency">
         <h1>字頻列表</h1>
         <WordFrequencyForm  onSubmit={this.handleSearch} />
         <AnalyzedResult analyzedData={analyzedData} />
