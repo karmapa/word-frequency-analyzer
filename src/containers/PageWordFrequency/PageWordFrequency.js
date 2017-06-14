@@ -19,11 +19,11 @@ class PageWordFrequency extends Component {
     const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.pbId}`
 
     fetch(newHREF).then(function(response) {
-      if (response.ok === false) {
-        console.log('response' + response)
-      }
 
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      }
+      return Promise.reject(response);
 
     }).then(function(jsonObject) {
 
@@ -69,6 +69,9 @@ return theResult
       })
       //    console.log('TEST'+this.state.finalWord)
     })
+    .catch((errResponse) => {
+      console.error('errResponse', errResponse);
+    });
 
 
   }
