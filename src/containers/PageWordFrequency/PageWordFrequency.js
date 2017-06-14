@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import tokenize from 'tibetan-tokenize';
-import ResultDisplay from './ResultDisplay';
+import ResultDisplay from './../../components/ResultDisplay';
 
-class ListPage extends Component {
+class PageWordFrequency extends Component {
 
   constructor(props) {
     super(props)
@@ -104,4 +104,4 @@ return theResult
   }
 }
 
-export default ListPage;
+export default PageWordFrequency;
