@@ -54,11 +54,11 @@ class PageWordFrequency extends Component {
         <h1>字頻列表</h1>
         <label>
           <span>KDB名稱: </span>
-          <input onChange={this.handleKDBChange}/>
+          <input onChange={this.handleKDBChange} />
         </label>
         <label>
           <span>PB ID：</span>
-          <input onChange={this.handlePBChange}/>
+          <input onChange={this.handlePBChange} />
         </label>
         <button onClick={this.handleSearch}>Search</button>
         <AnalyzedResult analyzedData={analyzedData} />
