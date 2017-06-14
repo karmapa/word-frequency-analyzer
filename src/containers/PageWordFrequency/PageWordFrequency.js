@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import tokenize from 'tibetan-tokenize';
-import ResultDisplay from './../../components/ResultDisplay';
+import ResultDisplay from './../../components/AnalyzedResult/AnalyzedResult';
 
 class PageWordFrequency extends Component {
 
