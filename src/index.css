@@ -2,32 +2,33 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color:rgb(11,68,10);
+  color: rgb(11,68,10);
 }
 
-button,input{
+button,
+input {
   font-size: 14px;
   background-color: white;
-  border:1px solid rgb(122, 139, 129);
+  border: 1px solid rgb(122, 139, 129);
 }
 
 input{
-  margin-right:50px;
+  margin-right: 50px;
 }
 
-#showResult{
-  margin-top:20px;
-  border-top:5px solid rgb(11, 68, 10);
+#showResult {
+  margin-top: 20px;
+  border-top: 5px solid rgb(11, 68, 10);
   padding-top: 30px;
-  color:blue;
+  color: blue;
 }
 
 #showResult div {
-  height:100px;
-  min-width:50px;
-  float:left;
+  height: 100px;
+  min-width: 50px;
+  float: left;
   margin-bottom: 15px;
-  color:rgb(8, 29, 3);
+  color: rgb(8, 29, 3);
 }
 
 #showResult hr {
@@ -35,23 +36,22 @@ input{
 }
 
 
-@media screen and (max-width:620px){
-  input,button{
-    display:block;
-width:80%;
-    margin:0 auto;
+@media screen and (max-width: 620px) {
+    display: block;
+width: 80%;
+    margin: 0 auto;
     margin-bottom: 25px;
   }
 
 
 
-  button{
-    width:40%;
+  button {
+    width: 40%;
   }
 
-  button{
+  button {
     background-color: rgb(11, 77, 59);
-    color:white;
+    color: white;
   }
 
 }
