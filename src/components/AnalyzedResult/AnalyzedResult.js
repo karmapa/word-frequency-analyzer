@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AnalyzedResult =(props:{words:[],times:[]})=> {
+const AnalyzedResult = (props: {words: [], times: []}) => {
 
-let finalResult=[];
+let finalResult = [];
 
-const renderMoods=()=> {
-for (let i in props.words){
+const renderMoods = () => {
+for (let i in props.words) {
 finalResult.push(<div>{props.words[i]}<hr/>{props.times[i]}</div>)
 }
 return finalResult
