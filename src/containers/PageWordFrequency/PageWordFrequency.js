@@ -9,8 +9,7 @@ class PageWordFrequency extends Component {
     this.state = {
       kdbName: '',
       pbId: '',
-      finalWord: [],
-      finalFrequency: [],
+      analyzedData: {}
     };
   };
 
