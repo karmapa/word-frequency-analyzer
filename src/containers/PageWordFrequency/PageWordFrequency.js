@@ -25,11 +25,9 @@ class PageWordFrequency extends Component {
       }
       return Promise.reject(response);
 
-    }).then(function(jsonObject) {
+    }).then(function({text}) {
 
-      const apiText = (jsonObject.text);
-
-      const tokenTokens = (tokenize(apiText)).tokens;
+      const tokenTokens = (tokenize(text)).tokens;
 
       let theResult = {
         wordArr: [],
