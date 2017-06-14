@@ -16,9 +16,9 @@ class PageWordFrequency extends Component {
 
   handleSearch = () => {
 
-    const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.pbId}`
+    const apiUrl = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.pbId}`
 
-    fetch(newHREF).then(function(response) {
+    fetch(apiUrl).then(function(response) {
 
       if (response.ok) {
         return response.json();
