@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
+import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
 import getWordFrequencyData from './../../helpers/getWordFrequencyData';
 
 const getApiUrl = ({kdbName, pbId}) => `https://api.dharma-treasure.org/kdbs/${kdbName}/pbs/${pbId}`;
@@ -10,15 +11,12 @@ class PageWordFrequency extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      kdbName: '',
-      pbId: '',
       analyzedData: {}
     };
   };
 
-  handleSearch = () => {
+  handleSearch = ({kdbName, pbId}) => {
 
-    const {kdbName, pbId} = this.state;
     const apiUrl = getApiUrl({kdbName, pbId});
 
     fetch(apiUrl).then(function(response) {
@@ -39,28 +37,12 @@ class PageWordFrequency extends Component {
     });
   }
 
-  handleKDBChange = (e) => {
-    this.setState({kdbName: e.target.value})
-  }
-
-  handlePBChange = (e) => {
-    this.setState({pbId: e.target.value})
-  }
-
   render() {
     const {analyzedData} = this.state;
     return (
       <div className="App">
         <h1>字頻列表</h1>
-        <label>
-          <span>KDB名稱: </span>
-          <input onChange={this.handleKDBChange} />
-        </label>
-        <label>
-          <span>PB ID：</span>
-          <input onChange={this.handlePBChange} />
-        </label>
-        <button onClick={this.handleSearch}>Search</button>
+        <WordFrequencyForm  onSubmit={this.handleSearch} />
         <AnalyzedResult analyzedData={analyzedData} />
       </div>
     );
