@@ -1,8 +1,9 @@
 import React from 'react'
 
-const AnalyzedResult = ({words = [], times = []}) => {
+const AnalyzedResult = ({analyzedData = {}}) => {
 
-  const resultRows = words.map((word, index) => (<div key={`result-row-${index}`}>{word}<hr />{times[index]}</div>));
+  const resultRows = Object.keys(analyzedData)
+    .map((word, index) => (<div key={`result-row-${index}`}>{word}<hr />{analyzedData[word]}</div>));
 
   return <div id="showResult">{resultRows}</div>;
 };
