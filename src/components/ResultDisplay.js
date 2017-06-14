@@ -1,30 +1,24 @@
-import React, {Component} from 'react'
-
-//class  extends Component{
-
-  const ResultDisplay =(props:{words:[],times:[]})=> {
+import React from 'react'
 
 
-//  console.log('Test'+props.words)
+const ResultDisplay =(props:{words:[],times:[]})=> {
 
-let finalResult='';
+
+let finalResult=[];
+
+const renderMoods=()=> {
 
 for (let i in props.words){
+finalResult.push(<div>{props.words[i]}<hr/>{props.times[i]}</div>)
+}
 
-finalResult+=`<div class="resultBlock">${props.words[i]}<hr>${props.times[i]}</div>`
+return finalResult
 
 }
 
-//this.refs.testIt.innerHTML=finalResult
 
-  return (
-    <div>
+  return <div id="showResult">{renderMoods()}</div>;
 
-      <div>HELLO</div>
-      <hr/>
-      <div>{finalResult}</div>
-    </div>
-  )
 
 };
 

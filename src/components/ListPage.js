@@ -17,9 +17,9 @@ class ListPage extends Component {
   handleSearch = () => {
 
     const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.inputKDBS}/pbs/${this.state.inputPB}`
-    const testHREF='https://api.dharma-treasure.org/kdbs/jiangkangyur/pbs/1-1-3b'
+    //const testHREF='https://api.dharma-treasure.org/kdbs/jiangkangyur/pbs/1-1-3b'
 
-    fetch(testHREF).then(function(response) {
+    fetch(newHREF).then(function(response) {
       if (response.ok === false) {
         console.log('response' + response)
       }
@@ -31,7 +31,6 @@ class ListPage extends Component {
       const apiText = (jsonObject.text);
 
       const tokenTokens = (tokenize(apiText)).tokens;
-      //console.log(tokenTokens);
 
       let theResult = {
         wordArr: [],
@@ -59,8 +58,6 @@ class ListPage extends Component {
             theResult.wordArr.push(tokenTokens[i])
             theResult.frequencyArr.push(1)
 
-            //    theResult.frequencyArr.push(1)
-
           }
 
         }
@@ -71,7 +68,7 @@ return theResult
         finalWord: theResult.wordArr,
         finalFrequency: theResult.frequencyArr,
       })
-          console.log('TEST'+this.state.finalWord)
+      //    console.log('TEST'+this.state.finalWord)
     })
 
 
@@ -101,6 +98,7 @@ return theResult
         <button onClick={this.handleSearch}>Search</button>
 
         <ResultDisplay words={this.state.finalWord} times={this.state.finalFrequency}/>
+
       </div>
     );
   }
