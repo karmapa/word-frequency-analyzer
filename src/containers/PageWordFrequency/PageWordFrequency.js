@@ -8,7 +8,7 @@ class PageWordFrequency extends Component {
     super(props)
     this.state = {
       kdbName: '',
-      inputPB: '',
+      pbId: '',
       finalWord: [],
       finalFrequency: [],
     };
@@ -16,7 +16,7 @@ class PageWordFrequency extends Component {
 
   handleSearch = () => {
 
-    const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.inputPB}`
+    const newHREF = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.pbId}`
     //const testHREF='https://api.dharma-treasure.org/kdbs/jiangkangyur/pbs/1-1-3b'
 
     fetch(newHREF).then(function(response) {
@@ -79,7 +79,7 @@ return theResult
   }
 
   handlePBChange = (e) => {
-    this.setState({inputPB: e.target.value})
+    this.setState({pbId: e.target.value})
   }
 
   render() {
