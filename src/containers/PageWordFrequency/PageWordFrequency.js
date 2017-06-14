@@ -3,6 +3,8 @@ import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import getWordFrequencyData from './../../helpers/getWordFrequencyData';
 
+const getApiUrl = ({kdbName, pbId}) => `https://api.dharma-treasure.org/kdbs/${kdbName}/pbs/${pbId}`;
+
 class PageWordFrequency extends Component {
 
   constructor(props) {
@@ -16,7 +18,8 @@ class PageWordFrequency extends Component {
 
   handleSearch = () => {
 
-    const apiUrl = `https://api.dharma-treasure.org/kdbs/${this.state.kdbName}/pbs/${this.state.pbId}`
+    const {kdbName, pbId} = this.state;
+    const apiUrl = getApiUrl({kdbName, pbId});
 
     fetch(apiUrl).then(function(response) {
 
