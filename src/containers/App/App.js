@@ -5,7 +5,11 @@ import PageWordFrequency from './../PageWordFrequency/PageWordFrequency';
 class App extends Component {
 
   render() {
-    return <PageWordFrequency />;
+    return (
+      <div className="App">
+        <PageWordFrequency />
+      </div>
+    );
   }
 }
 
