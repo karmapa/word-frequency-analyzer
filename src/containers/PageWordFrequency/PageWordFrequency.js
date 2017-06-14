@@ -45,6 +45,7 @@ class PageWordFrequency extends Component {
   }
 
   render() {
+    const {analyzedData} = this.state;
     return (
       <div className="App">
         <h1>字頻列表</h1>
@@ -56,9 +57,7 @@ class PageWordFrequency extends Component {
           <input onChange={this.handlePBChange}/>
         </label>
         <button onClick={this.handleSearch}>Search</button>
-
-        <AnalyzedResult words={this.state.finalWord} times={this.state.finalFrequency}/>
-
+        <AnalyzedResult analyzedData={analyzedData} />
       </div>
     );
   }
