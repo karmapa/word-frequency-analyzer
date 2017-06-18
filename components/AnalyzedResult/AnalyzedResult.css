@@ -1,0 +1,18 @@
+#showResult {
+  margin-top: 20px;
+  border-top: 5px solid rgb(11, 68, 10);
+  padding-top: 30px;
+  color: blue;
+}
+
+#showResult div {
+  height: 100px;
+  min-width: 50px;
+  float: left;
+  margin-bottom: 15px;
+  color: rgb(8, 29, 3);
+}
+
+#showResult hr {
+  border-color: rgb(206, 221, 202);
+}

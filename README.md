@@ -1,3 +1,0 @@
-To Begin
-
-npm start
