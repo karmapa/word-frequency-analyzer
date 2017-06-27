@@ -1,3 +1,3 @@
-export default function wordFrequency(action, state) {
+export default function wordFrequency(state, action) {
   return state;
 }
