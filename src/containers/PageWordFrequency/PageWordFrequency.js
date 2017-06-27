@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getPb} from './../../redux/modules/wordFrequency';
+import {getPb, setAnalyzedData} from './../../redux/modules/wordFrequency';
 import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
@@ -17,6 +17,7 @@ class PageWordFrequency extends Component {
 
   static propTypes = {
     getPb: PropTypes.func.isRequired,
+    setAnalyzedData: PropTypes.func.isRequired,
     analyzedData: PropTypes.object.isRequired
   };
 
@@ -54,4 +55,4 @@ class PageWordFrequency extends Component {
   }
 }
 
-export default connect(mapStateToProps, {getPb})(PageWordFrequency);
+export default connect(mapStateToProps, {getPb, setAnalyzedData})(PageWordFrequency);
