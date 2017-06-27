@@ -30,13 +30,13 @@ class PageWordFrequency extends Component {
 
   handleSearch = ({kdbName, pbId}) => {
 
-    const {getPb} = this.props;
+    const {getPb, setAnalyzedData} = this.props;
 
     getPb({kdbName, pbId})
       .then(({text}) => {
         const {tokens} = tokenize(text);
         const analyzedData = getWordFrequencyData(tokens);
-        this.setState({analyzedData});
+        setAnalyzedData(analyzedData);
       })
       .catch((errResponse) => {
         console.error('errResponse', errResponse);
@@ -44,7 +44,7 @@ class PageWordFrequency extends Component {
   }
 
   render() {
-    const {analyzedData} = this.state;
+    const {analyzedData} = this.props;
     return (
       <div id="pageWordFrequency">
         <h1>字頻列表</h1>
