@@ -33,14 +33,13 @@ class PageWordFrequency extends Component {
 
     getPb({kdbName, pbId})
       .then(({text}) => {
-
-      const {tokens} = tokenize(text);
-      const analyzedData = getWordFrequencyData(tokens);
-      this.setState({analyzedData});
-    })
-    .catch((errResponse) => {
-      console.error('errResponse', errResponse);
-    });
+        const {tokens} = tokenize(text);
+        const analyzedData = getWordFrequencyData(tokens);
+        this.setState({analyzedData});
+      })
+      .catch((errResponse) => {
+        console.error('errResponse', errResponse);
+      });
   }
 
   render() {
