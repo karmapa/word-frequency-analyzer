@@ -37,6 +37,27 @@ class PageWordFrequency extends Component {
     });
   }
 
+/*
+  const someFunc = function()
+    {
+      const inputArray = [1,2,4,5];
+      const toPass =  '<10'
+      let m=0;
+      for (let i in inputArray)
+      {
+        if (i eval(toPass))
+          m=m+1;
+      }
+      if (m===0){
+        return console.log('false')
+      }else{
+        return console.log('true')
+      };
+    };
+*/
+
+
+
   render() {
     const {analyzedData} = this.state;
     return (

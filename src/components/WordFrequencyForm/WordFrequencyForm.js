@@ -9,6 +9,7 @@ class WordFrequencyForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
     const {inputKdbName, inputPbId} = this.refs;
     this.props.onSubmit({
       kdbName: inputKdbName.value,
