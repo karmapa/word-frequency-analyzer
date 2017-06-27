@@ -2,12 +2,26 @@ export const GET_PB = 'word-frequency-analyzer/wordFrequency/GET_PB';
 export const GET_PB_SUCCESS = 'word-frequency-analyzer/wordFrequency/GET_PB_SUCCESS';
 export const GET_PB_FAIL = 'word-frequency-analyzer/wordFrequency/GET_PB_FAIL';
 
+export const SET_ANALYZED_DATA = 'word-frequency-analyzer/wordFrequency/SET_ANALYZED_DATA';
+
 const initialState = {
   analyzedData: {}
 };
 
 export default function wordFrequency(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case SET_ANALYZED_DATA:
+      return {analyzedData: action.analyzedData};
+    default:
+      return state;
+  }
+}
+
+export function setAnalyzedData(analyzedData) {
+  return {
+    type: SET_ANALYZED_DATA,
+    analyzedData
+  };
 }
 
 export function getPb({kdbName, pbId}) {
