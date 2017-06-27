@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
 import getWordFrequencyData from './../../helpers/getWordFrequencyData';
 
 const getApiUrl = ({kdbName, pbId}) => `https://api.dharma-treasure.org/kdbs/${kdbName}/pbs/${pbId}`;
+function mapStateToProps({wordFrequency}) {
+  return {
+    analyzedData: wordFrequency.analyzedData
+  };
+}
 
 class PageWordFrequency extends Component {
 
@@ -49,4 +55,4 @@ class PageWordFrequency extends Component {
   }
 }
 
-export default PageWordFrequency;
+export default connect(mapStateToProps, {getPb})(PageWordFrequency);
