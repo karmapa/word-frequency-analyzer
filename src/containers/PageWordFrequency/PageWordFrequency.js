@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {connet} from 'react-redux';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getPb} from './../../redux/modules/wordFrequency';
 import tokenize from 'tibetan-tokenize';
