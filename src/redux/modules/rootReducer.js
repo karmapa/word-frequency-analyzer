@@ -3,4 +3,4 @@ import wordFrequency from './wordFrequency';
 
 export default combineReducers({
   wordFrequency
-})
+});
