@@ -7,10 +7,10 @@ import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
 import getWordFrequencyData from './../../helpers/getWordFrequencyData';
 
-function mapStateToProps({wordFrequency}){
-  return{
+function mapStateToProps({wordFrequency}) {
+  return {
     analyzedData: wordFrequency.analyzedData
-  }
+  };
 }
 
 class PageWordFrequency extends Component {
@@ -19,7 +19,7 @@ class PageWordFrequency extends Component {
     getPb: PropTypes.func.isRequired,
     setAnalyzedData: PropTypes.func.isRequired,
     analyzedData: PropTypes.object.isRequired
-  }
+  };
 
   constructor(props) {
     super(props)
@@ -36,7 +36,7 @@ class PageWordFrequency extends Component {
       .then(({text}) => {
         const {tokens} = tokenize(text);
         const analyzedData = getWordFrequencyData(tokens);
-        setAnalyzedData({analyzedData});
+        setAnalyzedData(analyzedData);
       })
       .catch((errResponse) => {
         console.error('errResponse', errResponse);
