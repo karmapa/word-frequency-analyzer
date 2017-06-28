@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getPb} from './../../redux/modules/wordFrequency';
+import {getPb, setAnalyzedData} from './../../redux/modules/wordFrequency';
 import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
@@ -17,6 +17,7 @@ class PageWordFrequency extends Component {
 
   static propTypes = {
     getPb: PropTypes.func.isRequired,
+    setAnalyzedData: PropTypes.func.isRequired,
     analyzedData: PropTypes.object.isRequired
   }
 
@@ -29,13 +30,13 @@ class PageWordFrequency extends Component {
 
   handleSearch = ({kdbName, pbId}) => {
 
-    const {getPb} = this.props;
+    const {getPb, setAnalyzedData} = this.props;
 
     getPb({kdbName, pbId})
       .then(({text}) => {
         const {tokens} = tokenize(text);
         const analyzedData = getWordFrequencyData(tokens);
-        this.setState({analyzedData});
+        setAnalyzedData({analyzedData});
       })
       .catch((errResponse) => {
         console.error('errResponse', errResponse);
@@ -43,7 +44,7 @@ class PageWordFrequency extends Component {
   }
 
   render() {
-    const {analyzedData} = this.state;
+    const {analyzedData} = this.props;
     return (
       <div id="pageWordFrequency">
         <h1>字頻列表</h1>
@@ -54,4 +55,4 @@ class PageWordFrequency extends Component {
   }
 }
 
-export default connect(mapStateToProps, {getPb})(PageWordFrequency);
+export default connect(mapStateToProps, {getPb, setAnalyzedData})(PageWordFrequency);
