@@ -8,7 +8,7 @@ const initialState = {
   analyzedData : {}
 };
 
-export default function wordFrequency(state = initialState, action){
+export default function wordFrequency(state = initialState, action) {
   switch (action.type) {
     case SET_ANALYZED_DATA:
       return {analyzedData: action.analyzedData};
