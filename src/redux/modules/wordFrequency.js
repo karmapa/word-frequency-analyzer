@@ -10,7 +10,7 @@ export default function wordFrequency(state = initialState, action){
   return state;
 };
 
-export function getPb({kdbName, pdId}) {
+export function getPb({kdbName, pbId}) {
   return{
     type: [GET_PB, GET_PB_SUCCESS, GET_PB_FAIL],
     promise: (fetch) => fetch(`https://api.dharma-treasure.org/kdbs/${kdbName}/pbs/${pbId}`)
