@@ -21,18 +21,18 @@ export function setAnalyzedData(analyzedData) {
   return {
     type: SET_ANALYZED_DATA,
     analyzedData
-  };
+  }
 }
 
 export function getPb({kdbName, pbId}) {
-  return{
-    type: [GET_PB, GET_PB_SUCCESS, GET_PB_FAIL],
+  return {
+    types: [GET_PB, GET_PB_SUCCESS, GET_PB_FAIL],
     promise: (fetch) => fetch(`https://api.dharma-treasure.org/kdbs/${kdbName}/pbs/${pbId}`)
-    .then((response)=>{
-      if (response.ok){
-        return response.json();
-      }
-      return Promise.reject(response);
-    })
-  }
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        return Promise.reject(response);
+      })
+  };
 }
