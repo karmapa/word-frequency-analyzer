@@ -41,7 +41,7 @@ class PageWordFrequency extends Component {
       .catch((errResponse) => {
         console.error('errResponse', errResponse);
       });
-  }
+  };
 
   render() {
     const {analyzedData} = this.props;
