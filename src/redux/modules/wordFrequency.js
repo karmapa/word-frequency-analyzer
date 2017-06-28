@@ -1,4 +1,4 @@
-const initiialState = {
+const initialState = {
   analyzedData : {}
 };
 
