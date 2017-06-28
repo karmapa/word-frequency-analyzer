@@ -22,6 +22,6 @@ export default function clientMiddleware(client) {
       next({...rest, error, type: FAILURE});
     });
 
-    return actionPromise
+    return actionPromise;
   }
 }
