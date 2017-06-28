@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connet} from 'react-redux';
+import PropTypes from 'prop-types';
 import tokenize from 'tibetan-tokenize';
 import AnalyzedResult from './../../components/AnalyzedResult/AnalyzedResult';
 import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
@@ -14,6 +15,11 @@ function mapStateToProps({wordFrequency}){
 }
 
 class PageWordFrequency extends Component {
+
+  static propTypes = {
+    getPb: PropTypes.func.isRequired,
+    analyzedData: PropTypes.object.isRequired
+  }
 
   constructor(props) {
     super(props)
