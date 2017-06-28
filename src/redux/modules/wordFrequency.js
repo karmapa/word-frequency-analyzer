@@ -1,3 +1,7 @@
-export default function wordFrequency (action,state){
+const initiialState = {
+  analyzedData : {}
+};
+
+export default function wordFrequency(state = initialState, action){
   return state;
-}
+};
