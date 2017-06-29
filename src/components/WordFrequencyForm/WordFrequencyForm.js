@@ -7,12 +7,32 @@ class WordFrequencyForm extends Component {
     onSubmit: PropTypes.func.isRequired
   };
 
+    constructor(props){
+      super(props)
+      this.state={
+        inputKdbName:'',
+        inputPbId:'',
+      }
+    }
+
+  handleKdbChange=(e)=>{
+    this.setState({
+      inputKdbName:e.target.value
+    });
+  }
+
+  handlePbChange=(e)=>{
+    this.setState({
+      inputPbId:e.target.value,
+    });
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const {inputKdbName, inputPbId} = this.refs;
+    const {inputKdbName, inputPbId} = this.state;
     this.props.onSubmit({
-      kdbName: inputKdbName.value,
-      pbId: inputPbId.value
+      kdbName: inputKdbName,
+      pbId: inputPbId,
     });
   };
 
@@ -21,11 +41,11 @@ class WordFrequencyForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           <span>KDB名稱: </span>
-          <input ref="inputKdbName" />
+          <input value={this.state.inputKdbName} onChange={this.handleKdbChange}/>
         </label>
         <label>
           <span>PB ID：</span>
-          <input ref="inputPbId" />
+          <input value={this.state.inputPbId} onChange={this.handlePbChange}/>
         </label>
         <button type="submit">Search</button>
       </form>
