@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import { Field, reduxForm, initialize } from 'redux-form';
 import PropTypes from 'prop-types';
+
 
 class WordFrequencyForm extends Component {
 
