@@ -38,6 +38,9 @@ class WordFrequencyForm extends Component {
   };
 
   render() {
+
+    const { handleSubmit, pristine, reset, submitting } = prop
+    
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
