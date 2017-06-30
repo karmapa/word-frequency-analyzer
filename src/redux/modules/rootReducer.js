@@ -1,8 +1,7 @@
 import {combineReducers} from 'redux';
-import {reducer as formReducer} from 'redux-form'
+import {reducer as formReducer} from 'redux-form';
 import wordFrequency from './wordFrequency';
-import wordFrequencyForm from './wordFrequencyForm'
-import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm'
+import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequencyForm';
 
 export default combineReducers({
   wordFrequency,
