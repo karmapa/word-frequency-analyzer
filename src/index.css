@@ -4,34 +4,3 @@ body {
   font-family: sans-serif;
   color: rgb(11,68,10);
 }
-
-button,
-input {
-  font-size: 14px;
-  background-color: white;
-  border: 1px solid rgb(122, 139, 129);
-}
-
-input {
-  margin-right: 50px;
-}
-
-@media screen and (max-width: 620px) {
-
-  input,
-  button {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 25px;
-  }
-
-  button {
-    width: 40%;
-  }
-
-  button {
-    background-color: rgb(11, 77, 59);
-    color: white;
-  }
-}
