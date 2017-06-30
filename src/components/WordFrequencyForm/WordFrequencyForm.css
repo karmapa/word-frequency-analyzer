@@ -1,18 +1,23 @@
 button,
-Field {
+.input {
   font-size: 14px;
-  background-color: white;
   border: 1px solid rgb(122, 139, 129);
 }
 
-Field {
+.input {
   margin-right: 50px;
+}
+
+label,
+button,
+.input,{
+  float:left;
 }
 
 @media screen and (max-width: 620px) {
 
-  Field,
-  button {
+  button,
+  .input {
     display: block;
     width: 80%;
     margin: 0 auto;

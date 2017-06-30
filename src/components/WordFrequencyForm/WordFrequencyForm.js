@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
+import './WordFrequencyForm.css';
 
 class WordFrequencyForm extends Component {
 
@@ -14,22 +15,14 @@ class WordFrequencyForm extends Component {
 
     return (
       <form onSubmit={handleSubmit}>
-        <div>
           <label>
-            <span>KDB名稱:</span>
+            <span>KDB名稱：</span>
           </label>
-          <div>
-            <Field name="kdbName" component="input" type="text" />
-          </div>
-        </div>
-        <div>
+            <Field name="kdbName" component="input" type="text" className="input"/>
           <label>
             <span>PB ID：</span>
           </label>
-          <div>
-            <Field name="pbId" component="input" type="text" />
-          </div>
-        </div>
+            <Field name="pbId" component="input" type="text" className="input"/>
         <button type="submit">Search</button>
       </form>
     );
