@@ -8,35 +8,6 @@ class WordFrequencyForm extends Component {
     onSubmit: PropTypes.func.isRequired
   };
 
-    constructor(props){
-      super(props)
-      this.state={
-        inputKdbName:'',
-        inputPbId:'',
-      }
-    }
-
-  handleKdbChange=(e)=>{
-    this.setState({
-      inputKdbName:e.target.value
-    });
-  }
-
-  handlePbChange=(e)=>{
-    this.setState({
-      inputPbId:e.target.value,
-    });
-  }
-
-  handleSubmit = (data,event) => {
-    event.preventDefault();
-    const {inputKdbName, inputPbId} = this.state;
-    this.props.onSubmit({
-      kdbName: inputKdbName,
-      pbId: inputPbId,
-    });
-  };
-
   render() {
 
     const {handleSubmit, pristine, reset, submitting} = this.props;
