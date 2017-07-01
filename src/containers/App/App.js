@@ -13,14 +13,12 @@ class App extends Component {
         <Router>
           <div>
             <ul>
-              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/'>Word Frequency</Link></li>
               <li><Link to='/about'>About</Link></li>
-              <li><Link to='/wordFrequency'>Word Frequency</Link></li>
             </ul>
             <hr/>
             <Route exact path='/' component={PageWordFrequency} />
             <Route path='/about' component={About} />
-            <Route path='/wordFrequency' component={PageWordFrequency} />
           </div>
         </Router>
       </div>
