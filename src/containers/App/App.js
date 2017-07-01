@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Link, Match, Miss} from 'react-router'
 import './App.css';
 import PageWordFrequency from './../PageWordFrequency/PageWordFrequency';
 
