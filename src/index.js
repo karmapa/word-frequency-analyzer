@@ -7,7 +7,7 @@ import rootReducer from './redux/modules/rootReducer';
 import App from './containers/App/App';
 import './index.css';
 
-const store = createStore(rootReducer, applyMiddleware(clientMiddleware(fetch)))
+const store = createStore(rootReducer, applyMiddleware(clientMiddleware(fetch)));
 
 const component = (
   <Provider store={store}>
