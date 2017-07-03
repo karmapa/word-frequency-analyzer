@@ -18,11 +18,11 @@ class WordFrequencyForm extends Component {
         <label>
           <span>KDB名稱：</span>
         </label>
-        <Field name="kdbName" component="input" type="text" className="input"/>
+        <Field name="kdbName" component="input" type="text" className="input" />
         <label>
           <span>PB ID：</span>
         </label>
-        <Field name="pbId" component="input" type="text" className="input"/>
+        <Field name="pbId" component="input" type="text" className="input" />
         <button type="submit">Search</button>
       </form>
     );
