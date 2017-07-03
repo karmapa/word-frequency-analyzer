@@ -15,14 +15,14 @@ class WordFrequencyForm extends Component {
 
     return (
       <form onSubmit={handleSubmit}>
-          <label>
-            <span>KDB名稱：</span>
-          </label>
-            <Field name="kdbName" component="input" type="text" className="input"/>
-          <label>
-            <span>PB ID：</span>
-          </label>
-            <Field name="pbId" component="input" type="text" className="input"/>
+        <label>
+          <span>KDB名稱：</span>
+        </label>
+        <Field name="kdbName" component="input" type="text" className="input"/>
+        <label>
+          <span>PB ID：</span>
+        </label>
+        <Field name="pbId" component="input" type="text" className="input"/>
         <button type="submit">Search</button>
       </form>
     );
