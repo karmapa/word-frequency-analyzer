@@ -10,7 +10,7 @@ class WordFrequencyForm extends Component {
     onSubmit: PropTypes.func.isRequired
   };
 
-  kdbNameInput({ input, meta: { touched, error }, ...custom }) {
+  handleInput({ input, meta: { touched, error }, ...custom }) {
     const hasError = touched && error !== undefined;
     return (
       <div>
@@ -38,11 +38,11 @@ class WordFrequencyForm extends Component {
         <label>
           <span>KDB名稱：</span>
         </label>
-        <Field name="kdbName" component={this.kdbNameInput} type="text" className="input" />
+        <Field name="kdbName" component={this.handleInput} type="text" className="input" />
         <label>
           <span>PB ID：</span>
         </label>
-        <Field name="pbId" component={this.kdbNameInput} type="text" className="input" />
+        <Field name="pbId" component={this.handleInput} type="text" className="input" />
         <button type="submit">Search</button>
       </form>
     );
