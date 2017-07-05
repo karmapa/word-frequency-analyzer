@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, SubmissionError } from 'redux-form';
 import PropTypes from 'prop-types';
 import './WordFrequencyForm.css';
 
