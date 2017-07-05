@@ -53,7 +53,9 @@ const validate = values => {
   const errors = {}
   if (!values.kdbName || values.kdbName.trim() === '') {
     errors.kdbName = 'KDB 名稱是必填欄位'
-  }
+  } else  if (!values.pbId || values.pbId.trim() === '') {
+      errors.pbId = 'PB ID 是必填欄位'
+    }
   return errors
 }
 
