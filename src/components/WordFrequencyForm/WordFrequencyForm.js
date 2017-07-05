@@ -15,10 +15,11 @@ class WordFrequencyForm extends Component {
     return (
       <div>
         {hasError &&
+          <div className='inputError'>
           <Message
             error
-            header='Error'
             content={error} />
+          </div>
         }
         <Input
           error={hasError}
