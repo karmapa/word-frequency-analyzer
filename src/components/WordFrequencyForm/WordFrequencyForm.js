@@ -14,6 +14,11 @@ class WordFrequencyForm extends Component {
     const hasError = touched && error !== undefined;
     return (
       <div className='inputArea'>
+        <Input
+          error={hasError}
+          fluid
+          {...input}
+          {...custom} />
         {hasError &&
           <div className='inputError'>
           <Message
@@ -21,24 +26,8 @@ class WordFrequencyForm extends Component {
             content={error} />
           </div>
         }
-        <Input
-          error={hasError}
-          fluid
-          {...input}
-          {...custom} />
       </div>
     );
-  }
-
-  handleTEST = ()=>{
-    const pbRegRule = new RegExp (/\d{4}-\d{2}-\d{2}/);
-    const testStr = '2007-01-25'
-
-    if (pbRegRule.test(testStr)){
-      console.log('格式範例：1-1-1a')
-    }
-
-    alert('A')
   }
 
   render() {
@@ -46,6 +35,7 @@ class WordFrequencyForm extends Component {
     const {handleSubmit, pristine, reset, submitting} = this.props;
 
     return (
+
       <form onSubmit={handleSubmit}>
         <label>
           <span>KDB名稱：</span>
@@ -72,8 +62,7 @@ const validate = values => {
       errors.pbId = 'PB ID 是必填欄位'
     } else if (!pbRegRule.test(values.pbId)) {
         errors.pbId = '格式範例：1-1-1a'
-      }
-
+      }      
   return errors
 }
 
