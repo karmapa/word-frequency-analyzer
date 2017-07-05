@@ -49,6 +49,15 @@ class WordFrequencyForm extends Component {
   }
 }
 
+const validate = values => {
+  const errors = {}
+  if (!values.kdbName || values.kdbName.trim() === '') {
+    errors.kdbName = 'KDB 名稱是必填欄位'
+  }
+  return errors
+}
+
 export default reduxForm({
-  form: 'WordFrequencyForm'
+  form: 'WordFrequencyForm',
+  validate,
 })(WordFrequencyForm);
