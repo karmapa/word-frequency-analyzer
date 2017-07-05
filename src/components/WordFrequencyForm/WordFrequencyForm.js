@@ -42,7 +42,7 @@ class WordFrequencyForm extends Component {
         <label>
           <span>PB ID：</span>
         </label>
-        <Field name="pbId" component="input" type="text" className="input" />
+        <Field name="pbId" component={this.kdbNameInput} type="text" className="input" />
         <button type="submit">Search</button>
       </form>
     );
