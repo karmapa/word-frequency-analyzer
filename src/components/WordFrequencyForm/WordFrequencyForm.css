@@ -1,7 +1,7 @@
-button,
-.input {
+button {
   font-size: 14px;
   border: 1px solid rgb(122, 139, 129);
+  margin-left: 10px;
 }
 
 button {
@@ -9,24 +9,32 @@ button {
   color: white;
 }
 
-.input {
-  margin-right: 50px;
-}
 
 label,
 button,
-.input,{
+.inputArea{
+  padding-left: 8px;
   float:left;
 }
 
+form{
+  padding-left:10px;
+}
+
 .inputError{
-  color:red;
+  color:white;
+  background-color: rgba(199, 73, 118, 0.6);
+  padding:2px;
+}
+
+hr{
+  float:
 }
 
 @media screen and (max-width: 620px) {
 
   button,
-  .input {
+  .inputArea {
     display: block;
     width: 80%;
     margin: 0 auto;
