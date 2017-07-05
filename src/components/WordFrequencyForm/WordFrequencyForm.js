@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
+import { Input, Button, Message } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 import './WordFrequencyForm.css';
 
