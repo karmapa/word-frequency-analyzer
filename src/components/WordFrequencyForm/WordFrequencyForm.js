@@ -13,7 +13,7 @@ class WordFrequencyForm extends Component {
   handleInput({ input, meta: { touched, error }, ...custom }) {
     const hasError = touched && error !== undefined;
     return (
-      <div>
+      <div className='inputArea'>
         {hasError &&
           <div className='inputError'>
           <Message
@@ -28,6 +28,17 @@ class WordFrequencyForm extends Component {
           {...custom} />
       </div>
     );
+  }
+
+  handleTEST = ()=>{
+    const pbRegRule = new RegExp (/\d{4}-\d{2}-\d{2}/);
+    const testStr = '2007-01-25'
+
+    if (pbRegRule.test(testStr)){
+      console.log('格式範例：1-1-1a')
+    }
+
+    alert('A')
   }
 
   render() {
@@ -52,11 +63,17 @@ class WordFrequencyForm extends Component {
 
 const validate = values => {
   const errors = {}
+  const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
+  const testStr = '1-1-1a'
+
   if (!values.kdbName || values.kdbName.trim() === '') {
     errors.kdbName = 'KDB 名稱是必填欄位'
   } else  if (!values.pbId || values.pbId.trim() === '') {
       errors.pbId = 'PB ID 是必填欄位'
-    }
+    } else if (!pbRegRule.test(values.pbId)) {
+        errors.pbId = '格式範例：1-1-1a'
+      }
+
   return errors
 }
 
