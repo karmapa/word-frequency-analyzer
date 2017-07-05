@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Input, Button, Message } from 'semantic-ui-react'
+import {Field, reduxForm, SubmissionError} from 'redux-form';
+import {Input, Button, Message} from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 import './WordFrequencyForm.css';
 
@@ -10,7 +10,7 @@ class WordFrequencyForm extends Component {
     onSubmit: PropTypes.func.isRequired
   };
 
-  handleInput({ input, meta: { touched, error }, ...custom }) {
+  handleInput({input, meta: {touched, error}, ...custom }) {
     const hasError = touched && error !== undefined;
     return (
       <div className='inputArea'>
@@ -18,12 +18,14 @@ class WordFrequencyForm extends Component {
           error={hasError}
           fluid
           {...input}
-          {...custom} />
+          {...custom}
+        />
         {hasError &&
           <div className='inputError'>
           <Message
             error
-            content={error} />
+            content={error}
+          />
           </div>
         }
       </div>
@@ -35,7 +37,6 @@ class WordFrequencyForm extends Component {
     const {handleSubmit, pristine, reset, submitting} = this.props;
 
     return (
-
       <form onSubmit={handleSubmit}>
         <label>
           <span>KDB名稱：</span>
@@ -52,18 +53,20 @@ class WordFrequencyForm extends Component {
 }
 
 const validate = values => {
-  const errors = {}
+  const errors = {};
   const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
-  const testStr = '1-1-1a'
+  const testStr = '1-1-1a';
 
   if (!values.kdbName || values.kdbName.trim() === '') {
-    errors.kdbName = 'KDB 名稱是必填欄位'
-  } else  if (!values.pbId || values.pbId.trim() === '') {
-      errors.pbId = 'PB ID 是必填欄位'
-    } else if (!pbRegRule.test(values.pbId)) {
-        errors.pbId = '格式範例：1-1-1a'
-      }      
-  return errors
+    errors.kdbName = 'KDB 名稱是必填欄位';
+  }
+  else  if (!values.pbId || values.pbId.trim() === '') {
+    errors.pbId = 'PB ID 是必填欄位';
+  }
+  else if (!pbRegRule.test(values.pbId)) {
+    errors.pbId = '格式範例：1-1-1a';
+  }
+  return errors;
 }
 
 export default reduxForm({
