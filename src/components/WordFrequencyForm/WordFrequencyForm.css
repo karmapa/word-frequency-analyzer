@@ -9,25 +9,24 @@ button {
   color: white;
 }
 
-
 label,
 button,
-.inputArea{
+.inputArea {
   padding-left: 8px;
   float:left;
 }
 
-form{
+form {
   padding-left:10px;
 }
 
-.inputError{
+.inputError {
   color:white;
   background-color: rgba(199, 73, 118, 0.6);
   padding:2px;
 }
 
-hr{
+hr {
   float:
 }
 
