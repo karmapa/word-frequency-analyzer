@@ -1,6 +1,6 @@
 const validate = (values) => {
   const errors = {};
-  const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
+  const pbRegRule = new RegExp(/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
 
   if (! values.kdbName || '' === values.kdbName.trim()) {
     errors.kdbName = 'KDB 名稱是必填欄位';
