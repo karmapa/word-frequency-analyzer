@@ -13,11 +13,11 @@ label,
 button,
 .inputArea {
   padding-left: 8px;
-  float:left;
+  float: left;
 }
 
 form {
-  padding-left:10px;
+  padding-left: 10px;
 }
 
 .inputError {
