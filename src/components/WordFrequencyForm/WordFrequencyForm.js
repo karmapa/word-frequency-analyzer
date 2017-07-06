@@ -13,7 +13,7 @@ class WordFrequencyForm extends Component {
   handleInput({input, meta: {touched, error}, ...custom }) {
     const hasError = touched && error !== undefined;
     return (
-      <div className='inputArea'>
+      <div className="inputArea">
         <Input
           error={hasError}
           fluid
@@ -21,7 +21,7 @@ class WordFrequencyForm extends Component {
           {...custom}
         />
         {hasError &&
-          <div className='inputError'>
+          <div className="inputError">
           <Message
             error
             content={error}
@@ -55,7 +55,6 @@ class WordFrequencyForm extends Component {
 const validate = values => {
   const errors = {};
   const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
-  const testStr = '1-1-1a';
 
   if (!values.kdbName || values.kdbName.trim() === '') {
     errors.kdbName = 'KDB 名稱是必填欄位';
