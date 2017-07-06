@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Field, reduxForm, SubmissionError} from 'redux-form';
-import {Input, Button, Message} from 'semantic-ui-react'
+import {Field, reduxForm} from 'redux-form';
+import {Input, Message} from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 import './WordFrequencyForm.css';
 
@@ -34,7 +34,7 @@ class WordFrequencyForm extends Component {
 
   render() {
 
-    const {handleSubmit, pristine, reset, submitting} = this.props;
+    const {handleSubmit} = this.props;
 
     return (
       <form onSubmit={handleSubmit}>
