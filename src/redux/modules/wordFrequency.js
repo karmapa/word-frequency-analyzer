@@ -2,7 +2,7 @@ export const GET_PB = 'word-frequency-analyzer/wordFrequency/GET_PB';
 export const GET_PB_SUCCESS = 'word-frequency-analyzer/wordFrequency/GET_PB_SUCCESS';
 export const GET_PB_FAIL = 'word-frequency-analyzer/wordFrequency/GET_PB_FAIL';
 
-export const SET_ANALYZED_DATA = 'word-frequency-analyzer/wordFrequency/SET_ANALYZED_DATA'
+export const SET_ANALYZED_DATA = 'word-frequency-analyzer/wordFrequency/SET_ANALYZED_DATA';
 
 const initialState = {
   analyzedData : {}
