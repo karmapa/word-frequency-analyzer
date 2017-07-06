@@ -1,5 +1,3 @@
-import React from 'react';
-
 const validate = values => {
   const errors = {};
   const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);

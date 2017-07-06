@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {Input, Message} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Validate from './Validate';
+import Validate from './validate';
 import './WordFrequencyForm.css';
 
 class WordFrequencyForm extends Component {
