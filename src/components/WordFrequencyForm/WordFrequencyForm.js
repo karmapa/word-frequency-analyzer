@@ -11,7 +11,7 @@ class WordFrequencyForm extends Component {
   };
 
   handleInput({input, meta: {touched, error}, ...custom }) {
-    const hasError = touched && error !== undefined;
+    const hasError = undefined !== touched && error;
     return (
       <div className="inputArea">
         <Input
@@ -56,10 +56,10 @@ const validate = values => {
   const errors = {};
   const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
 
-  if (!values.kdbName || values.kdbName.trim() === '') {
+  if (!values.kdbName || '' === values.kdbName.trim()) {
     errors.kdbName = 'KDB 名稱是必填欄位';
   }
-  else  if (!values.pbId || values.pbId.trim() === '') {
+  else  if (!values.pbId || '' === values.pbId.trim()) {
     errors.pbId = 'PB ID 是必填欄位';
   }
   else if (!pbRegRule.test(values.pbId)) {
