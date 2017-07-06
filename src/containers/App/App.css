@@ -17,17 +17,17 @@ nav {
   list-style-type: none;
 }
 
-nav li{
+nav li {
   padding: 25px 50px;
   text-align: center;
 }
 
-nav li a{
+nav li a {
   color: white;
   text-decoration: none;
 }
 
-nav li:hover{
+nav li:hover {
   padding: 25px 50px;
   color: white;
   text-decoration: underline;
