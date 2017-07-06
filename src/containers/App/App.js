@@ -7,20 +7,19 @@ import About from './../About/About'
 class App extends Component {
 
   render() {
-
     return (
-        <Router>
-          <div id='App'>
+      <Router>
+        <div id='App'>
           <nav>
-              <li><Link to='/'>Word Frequency</Link></li>
-              <li><Link to='/about'>About</Link></li>
+            <li><Link to='/'>Word Frequency</Link></li>
+            <li><Link to='/about'>About</Link></li>
           </nav>
           <div id='content'>
             <Route exact path='/' component={PageWordFrequency} />
             <Route path='/about' component={About} />
           </div>
         </div>
-        </Router>
+      </Router>
     );
   }
 }
