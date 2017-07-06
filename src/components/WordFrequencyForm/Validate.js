@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Validate = values => {
+const validate = values => {
   const errors = {};
   const pbRegRule = new RegExp (/^\d{1}-\d{1}-\d{1}[a-zA-Z]$/);
 
@@ -16,4 +16,4 @@ const Validate = values => {
   return errors;
 }
 
-export default Validate;
+export default validate;
