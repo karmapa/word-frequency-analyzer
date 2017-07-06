@@ -5,5 +5,5 @@ import WordFrequencyForm from './../../components/WordFrequencyForm/WordFrequenc
 
 export default combineReducers({
   wordFrequency,
-  form:formReducer
+  form: formReducer
 });
