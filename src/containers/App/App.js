@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route , Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route , Link} from 'react-router-dom';
 import './App.css';
 import PageWordFrequency from './../PageWordFrequency/PageWordFrequency';
-import About from './../About/About'
+import About from './../About/About';
 
 class App extends Component {
 
