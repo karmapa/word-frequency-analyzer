@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {Input, Message} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Validate from './validate';
+import validate from './validate';
 import './WordFrequencyForm.css';
 
 class WordFrequencyForm extends Component {
@@ -12,7 +12,7 @@ class WordFrequencyForm extends Component {
   };
 
   handleInput({input, meta: {touched, error}, ...custom }) {
-    const hasError = undefined !== touched && error;
+    const hasError = touched && undefined !== error;
     return (
       <div className="inputArea">
         <Input
@@ -55,5 +55,5 @@ class WordFrequencyForm extends Component {
 
 export default reduxForm({
   form: 'WordFrequencyForm',
-  Validate,
+  validate,
 })(WordFrequencyForm);
